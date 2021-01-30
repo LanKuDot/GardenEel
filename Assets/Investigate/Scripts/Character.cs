@@ -8,7 +8,7 @@ namespace Investigate
         [SerializeField]
         private Rigidbody2D _rigidbody = null;
 
-        protected float velocity => _rigidbody.velocity.magnitude;
+        public float velocity => _rigidbody.velocity.magnitude;
 
         private void Reset()
         {

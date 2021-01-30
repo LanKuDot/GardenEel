@@ -18,7 +18,12 @@ namespace Investigate
 
         #endregion
 
+        #region Data Getters
+
         public static GardenEel Instance { get; private set; }
+        public Vector3 position => transform.position;
+
+        #endregion
 
         #region Values
 
