@@ -10,6 +10,8 @@ namespace Investigate
         [SerializeField]
         private float _movingVelocity = 5.0f;
         [SerializeField]
+        private float _tracingVelocity = 20.0f;
+        [SerializeField]
         private float _tracingRange = 20.0f;
 
         private Vector2 _direction;
@@ -42,7 +44,7 @@ namespace Investigate
 
             if (distanceToGardenEel < _tracingRange) {
                 _direction = towardVector.normalized;
-                velocity = GardenEel.Instance.velocity + 2;
+                velocity = _tracingVelocity;
             }
 
             MovePosition(
