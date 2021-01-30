@@ -3,8 +3,15 @@ using UnityEngine;
 
 namespace Investigate
 {
+    [RequireComponent(typeof(SpriteRenderer))]
     public class Shark : Character
     {
+        #region Serialized Fields
+
+        [SerializeField]
+        private SpriteRenderer _spriteRenderer;
+        [SerializeField]
+        private Sprite[] _sprites;
         [SerializeField]
         private Vector2 _freeMovingIntervalRange = new Vector2(2.0f, 3.0f);
         [SerializeField]
@@ -14,12 +21,21 @@ namespace Investigate
         [SerializeField]
         private float _tracingRange = 20.0f;
 
+        #endregion
+
         private Vector2 _direction;
         private bool _closeToPlayer;
+        private const float _spriteChangingInterval = 0.4f;
+
+        private void Reset()
+        {
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+        }
 
         private void Start()
         {
             StartCoroutine(FreeMoving());
+            StartCoroutine(SpriteChanging());
         }
 
         private IEnumerator FreeMoving()
@@ -32,6 +48,17 @@ namespace Investigate
                     Random.Range(
                         _freeMovingIntervalRange.x,
                         _freeMovingIntervalRange.y));
+            }
+        }
+
+        private IEnumerator SpriteChanging()
+        {
+            var curSpriteID = 0;
+
+            while (true) {
+                _spriteRenderer.sprite = _sprites[curSpriteID];
+                curSpriteID = (int) Mathf.Repeat(++curSpriteID, _sprites.Length);
+                yield return new WaitForSeconds(_spriteChangingInterval);
             }
         }
 
