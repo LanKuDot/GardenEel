@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 
-public class FPSLimiter : MonoBehaviour
+namespace Investigate
 {
-    public int fps = 60;
-
-    private void Start()
+    public class FPSLimiter : MonoBehaviour
     {
-        Application.targetFrameRate = fps;
+        public int fps = 60;
+
+        private void Start()
+        {
+            Application.targetFrameRate = fps;
+        }
     }
 }
