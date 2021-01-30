@@ -1,4 +1,5 @@
 ﻿using System;
+using Investigate.UI;
 using UnityEngine;
 
 namespace Investigate
@@ -38,6 +39,11 @@ namespace Investigate
 
         #endregion
 
+        private void Awake()
+        {
+            Instance = this;
+        }
+
         private void Update()
         {
             if (Input.GetKeyDown(_gatheringKey))
@@ -63,6 +69,18 @@ namespace Investigate
                     _movingForceRange.y,
                     Mathf.InverseLerp(0, _maxGatheringTime, _gatheringTime));
             AddImpulseForce(directionVector * forceAmount);
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.CompareTag("Partner"))
+                SelectComponent(other.gameObject.GetComponent<Partner>().data);
+        }
+
+        private void SelectComponent(PartnerData data)
+        {
+            ComponentSelectionUI.Instance.SetComponentSprite(
+                data.componentType, data.componentSprite, data.id);
         }
     }
 }
