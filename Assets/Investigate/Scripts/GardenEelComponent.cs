@@ -7,6 +7,8 @@ namespace Investigate
         public static GardenEelComponent Instance { get; private set; }
         public int[] componentIDs { get; private set; }
 
+        private int numOfComponents;
+
         private void Awake()
         {
             // Destroy old one
@@ -17,14 +19,31 @@ namespace Investigate
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
-            componentIDs = new int[(int) GardenEel.BodyType.NUM_OF_TYPE];
+            numOfComponents = (int) GardenEel.BodyType.NUM_OF_TYPE;
+            componentIDs = new int[numOfComponents];
             for (var i = 0; i < componentIDs.Length; ++i)
                 componentIDs[i] = -1;
         }
 
-        public void SetComponent(GardenEel.BodyType type, int componentID)
+        public int SetComponent(int newID, out bool toAppend)
         {
-            componentIDs[(int) type] = componentID;
+            // Fill the empty one first
+            for (var i = 0; i < numOfComponents; ++i) {
+                if (componentIDs[i] != -1)
+                    continue;
+
+                toAppend = false;
+                componentIDs[i] = newID;
+                return i;
+            }
+
+            // If all elements are filled, push the first one and append at the end
+            for (var i = 1; i < numOfComponents; ++i)
+                componentIDs[i - 1] = componentIDs[i];
+
+            toAppend = true;
+            componentIDs[numOfComponents - 1] = newID;
+            return numOfComponents - 1;
         }
     }
 }

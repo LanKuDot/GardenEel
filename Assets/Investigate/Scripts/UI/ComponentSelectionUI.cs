@@ -35,9 +35,10 @@ namespace Investigate.UI
 
         public void ConfirmComponent()
         {
-            _componentImages[(int) _candidateType].sprite = _candidateSprite;
-            GardenEelComponent.Instance.SetComponent(
-                _candidateType, _candidateComponentID);
+            var targetSlotID =
+                GardenEelComponent.Instance.SetComponent(
+                    _candidateComponentID, out var toAppend);
+            AppendSprite(targetSlotID, toAppend);
 
             _checkUI.SetActive(false);
             GameplayManager.Instance.GameResume();
@@ -47,6 +48,16 @@ namespace Investigate.UI
         {
             _checkUI.SetActive(false);
             GameplayManager.Instance.GameResume();
+        }
+
+        private void AppendSprite(int targetSlotID, bool toAppend)
+        {
+            if (toAppend) {
+                for (var i = 1; i < _componentImages.Length; ++i)
+                    _componentImages[i - 1].sprite = _componentImages[i].sprite;
+            }
+
+            _componentImages[targetSlotID].sprite = _candidateSprite;
         }
     }
 }
