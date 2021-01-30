@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 834226be768c9584f9e6a789cfe71896, type: 3}
-  m_Name: DropFish
+  m_Name: 12_Jellyfish
   m_EditorClassIdentifier: 
-  _id: 4
+  _id: 12
   _sprites:
-  - {fileID: 21300000, guid: 61f3de70b55a7e24698f390ba3a5e562, type: 3}
-  - {fileID: 21300000, guid: 7388d3a4696c5694e842f332c7097b13, type: 3}
-  _componentSprite: {fileID: 21300000, guid: 5575d274a06898744a8b01331dcdc486, type: 3}
-  _componentType: 0
+  - {fileID: 21300000, guid: 949ac7b1860755b4d8ec6e58a25e7a18, type: 3}
+  - {fileID: 21300000, guid: fbaa770630360ed469422ae334cbc377, type: 3}
+  _componentSprite: {fileID: 21300000, guid: 887dff727b1801540a589271370958fb, type: 3}
+  _componentType: 1
