@@ -15,10 +15,16 @@ namespace Investigate
         private Sprite _componentSprite = null;
         [SerializeField]
         private GardenEel.BodyType _componentType = GardenEel.BodyType.Body;
+        [SerializeField]
+        private string _skillExplainStr = "";
+        [SerializeField]
+        private string _lastWordStr = "";
 
         public int id => _id;
         public Sprite[] sprites => _sprites;
         public Sprite componentSprite => _componentSprite;
         public GardenEel.BodyType componentType => _componentType;
+        public string skillExplainStr => _skillExplainStr;
+        public string lastWordStr => _lastWordStr;
     }
 }

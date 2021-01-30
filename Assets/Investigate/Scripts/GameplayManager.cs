@@ -25,8 +25,7 @@ namespace Investigate
 
         public void SelectComponent(PartnerData data)
         {
-            _componentSelectionUI.SetComponentSprite(
-                data.componentType, data.componentSprite, data.id);
+            _componentSelectionUI.SetComponentSprite(data);
             // The game will resume after the component is selected
             GamePause();
         }

@@ -11,19 +11,25 @@ namespace Investigate.UI
         private GameObject _checkUI = null;
         [SerializeField]
         private Image _targetComponent = null;
+        [SerializeField]
+        private Text _lastWordText = null;
+        [SerializeField]
+        private Text _skillExplainText = null;
 
         private GardenEel.BodyType _candidateType;
         private Sprite _candidateSprite;
         private int _candidateComponentID;
 
-        public void SetComponentSprite(
-            GardenEel.BodyType type, Sprite sprite, int componentID)
+        public void SetComponentSprite(PartnerData data)
         {
-            _candidateType = type;
-            _candidateSprite = sprite;
-            _candidateComponentID = componentID;
+            _candidateType = data.componentType;
+            _candidateSprite = data.componentSprite;
+            _candidateComponentID = data.id;
 
-            _targetComponent.sprite = sprite;
+            _targetComponent.sprite = _candidateSprite;
+            _lastWordText.text = data.lastWordStr;
+            _skillExplainText.text = data.skillExplainStr;
+
             _checkUI.SetActive(true);
         }
 
