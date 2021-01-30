@@ -17,9 +17,11 @@ namespace Investigate
             _rigidbody.useFullKinematicContacts = true;
         }
 
-        protected void MovePosition(Vector2 deltaPosition)
+        protected void MovePosition(Vector2 targetPosition)
         {
-            _rigidbody.MovePosition((Vector2)transform.position + deltaPosition);
+            _rigidbody.MovePosition(targetPosition);
+
+            var deltaPosition = targetPosition - (Vector2)transform.position;
             SetLookDirection(deltaPosition.x);
         }
 

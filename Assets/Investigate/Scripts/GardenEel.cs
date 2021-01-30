@@ -5,6 +5,18 @@ namespace Investigate
 {
     public class GardenEel : Character
     {
+        #region Enums
+
+        public enum BodyType
+        {
+            Head = 0,
+            Body = 1,
+            Tail = 2,
+            NUM_OF_TYPE
+        }
+
+        #endregion
+
         public static GardenEel Instance { get; private set; }
 
         #region Values
