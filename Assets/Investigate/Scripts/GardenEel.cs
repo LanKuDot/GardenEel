@@ -1,4 +1,5 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 
 public class GardenEel : Character
@@ -7,6 +8,8 @@ public class GardenEel : Character
 
     #region Values
 
+    [SerializeField]
+    private Animator _animator = null;
     [SerializeField]
     private float _maxGatheringTime = 2.0f;
     [SerializeField]
@@ -18,6 +21,7 @@ public class GardenEel : Character
 
     private const KeyCode _gatheringKey = KeyCode.Space;
     private float _gatheringTime;
+    private readonly int _velocityParamID = Animator.StringToHash("velocity");
 
     #endregion
 
@@ -30,6 +34,8 @@ public class GardenEel : Character
                 Math.Min(_gatheringTime + Time.deltaTime, _maxGatheringTime);
         else if (Input.GetKeyUp(_gatheringKey))
             SetMoving();
+
+        _animator.SetFloat(_velocityParamID, velocity);
     }
 
     private void SetMoving()

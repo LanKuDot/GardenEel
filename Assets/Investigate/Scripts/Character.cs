@@ -6,6 +6,8 @@ public class Character : MonoBehaviour
     [SerializeField]
     private Rigidbody2D _rigidbody = null;
 
+    protected float velocity => _rigidbody.velocity.magnitude;
+
     private void Reset()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
