@@ -24,7 +24,9 @@ namespace Investigate
                         Random.Range(_spawnArea.xMin, _spawnArea.xMax),
                         Random.Range(_spawnArea.yMin, _spawnArea.yMax));
                 var obj =
-                    Instantiate(_partnerPrefab, spawnPosition, Quaternion.identity);
+                    Instantiate(
+                        _partnerPrefab, spawnPosition, Quaternion.identity);
+                obj.name = data.name;
                 var partner = obj.GetComponent<Partner>();
                 partner.Initialize(data);
             }
