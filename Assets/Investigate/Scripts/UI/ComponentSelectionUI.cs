@@ -5,8 +5,6 @@ namespace Investigate.UI
 {
     public class ComponentSelectionUI : MonoBehaviour
     {
-        public static ComponentSelectionUI Instance { get; private set; }
-
         [SerializeField]
         private Image[] _componentImages = null;
         [SerializeField]
@@ -17,11 +15,6 @@ namespace Investigate.UI
         private GardenEel.BodyType _candidateType;
         private Sprite _candidateSprite;
         private int _candidateComponentID;
-
-        private void Awake()
-        {
-            Instance = this;
-        }
 
         public void SetComponentSprite(
             GardenEel.BodyType type, Sprite sprite, int componentID)
@@ -41,11 +34,13 @@ namespace Investigate.UI
                 _candidateType, _candidateComponentID);
 
             _checkUI.SetActive(false);
+            GameplayManager.Instance.GameResume();
         }
 
         public void CancelComponent()
         {
             _checkUI.SetActive(false);
+            GameplayManager.Instance.GameResume();
         }
     }
 }

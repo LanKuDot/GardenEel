@@ -51,6 +51,9 @@ namespace Investigate
 
         private void Update()
         {
+            if (GameplayManager.Instance.isPausing)
+                return;
+
             if (Input.GetKeyDown(_gatheringKey))
                 _gatheringTime = 0.0f;
             else if (Input.GetKey(_gatheringKey))
@@ -84,8 +87,7 @@ namespace Investigate
 
         private void SelectComponent(PartnerData data)
         {
-            ComponentSelectionUI.Instance.SetComponentSprite(
-                data.componentType, data.componentSprite, data.id);
+            GameplayManager.Instance.SelectComponent(data);
         }
     }
 }
