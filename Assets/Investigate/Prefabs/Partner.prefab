@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8824564605929298609}
   - component: {fileID: 4672865260043912672}
   m_Layer: 0
-  m_Name: SeaUrchin
+  m_Name: Partner
   m_TagString: Partner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 3
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -145,4 +145,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 8824564605929298609}
   _spriteRenderer: {fileID: 7172181062282424376}
-  _data: {fileID: 11400000, guid: d92d61772b6f2894c9e1a7b109cb6a4e, type: 2}
+  _spriteChangingIntervalRange: {x: 0.1, y: 0.5}
+  _freeMovingRadiusRange: {x: 0.5, y: 1}
+  _freeMovingIntervalRange: {x: 1, y: 2}
