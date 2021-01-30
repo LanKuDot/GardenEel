@@ -658,8 +658,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 587b63640f6859a4099978f889c12a82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partnerPrefabs:
-  - {fileID: 7172181062282424383, guid: bd5ffc5ddd3acb748916b245b59d1ac1, type: 3}
+  _partnerPrefab: {fileID: 7172181062282424383, guid: bd5ffc5ddd3acb748916b245b59d1ac1,
+    type: 3}
+  _datas:
+  - {fileID: 11400000, guid: d92d61772b6f2894c9e1a7b109cb6a4e, type: 2}
+  - {fileID: 11400000, guid: d480f46ce186fd84fb4f8172e7d41feb, type: 2}
   _spawnArea:
     serializedVersion: 2
     x: -20

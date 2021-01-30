@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 834226be768c9584f9e6a789cfe71896, type: 3}
-  m_Name: SeaUrchin
+  m_Name: ElectroEel
   m_EditorClassIdentifier: 
   _id: 11
   _sprites:
-  - {fileID: 21300000, guid: 27608c4170d53214eaa248ba947562f0, type: 3}
-  _spriteChangingInterval: {x: 0.1, y: 0.5}
+  - {fileID: 21300000, guid: ade3538129614694493578bc1e2d8b2a, type: 3}
+  - {fileID: 21300000, guid: d3959bf0166064c4da95f167469993b0, type: 3}
   _componentSprite: {fileID: 0}
   _componentType: 1
-  _freeMovingRadius: 0.5
-  _freeMovingIntervalRange: {x: 1, y: 2}

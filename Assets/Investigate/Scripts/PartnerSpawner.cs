@@ -5,7 +5,9 @@ namespace Investigate
     public class PartnerSpawner : MonoBehaviour
     {
         [SerializeField]
-        private GameObject[] _partnerPrefabs = null;
+        private GameObject _partnerPrefab = null;
+        [SerializeField]
+        private PartnerData[] _datas = null;
         [SerializeField]
         private Rect _spawnArea = Rect.zero;
 
@@ -16,12 +18,15 @@ namespace Investigate
 
         private void SpawnPartners()
         {
-            foreach (var prefab in _partnerPrefabs) {
+            foreach (var data in _datas) {
                 var spawnPosition =
                     new Vector3(
                         Random.Range(_spawnArea.xMin, _spawnArea.xMax),
                         Random.Range(_spawnArea.yMin, _spawnArea.yMax));
-                Instantiate(prefab, spawnPosition, Quaternion.identity);
+                var obj =
+                    Instantiate(_partnerPrefab, spawnPosition, Quaternion.identity);
+                var partner = obj.GetComponent<Partner>();
+                partner.Initialize(data);
             }
         }
     }
