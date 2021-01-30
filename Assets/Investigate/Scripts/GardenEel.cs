@@ -51,15 +51,6 @@ namespace Investigate
                     _movingForceRange.y,
                     Mathf.InverseLerp(0, _maxGatheringTime, _gatheringTime));
             AddImpulseForce(directionVector * forceAmount);
-
-            SetLookDirection(directionVector.x);
-        }
-
-        private void SetLookDirection(float xValue)
-        {
-            var localScale = transform.localScale;
-            localScale.x = Mathf.Abs(localScale.x) * Mathf.Sign(xValue);
-            transform.localScale = localScale;
         }
     }
 }
