@@ -1554,12 +1554,14 @@ MonoBehaviour:
   _partnerPrefab: {fileID: 7172181062282424383, guid: bd5ffc5ddd3acb748916b245b59d1ac1,
     type: 3}
   _datas:
-  - {fileID: 11400000, guid: 5cc57781849ccb845ba78ec5c64bf974, type: 2}
+  - {fileID: 11400000, guid: 33de759673042ad4c82bb4c5eaf5a6c6, type: 2}
   - {fileID: 11400000, guid: acfb971dc8e149141a1a9fb6018b760a, type: 2}
-  - {fileID: 11400000, guid: d480f46ce186fd84fb4f8172e7d41feb, type: 2}
-  - {fileID: 11400000, guid: 0ee6b8dd1026d0b459df7381d0bd8193, type: 2}
+  - {fileID: 11400000, guid: 5cc57781849ccb845ba78ec5c64bf974, type: 2}
+  - {fileID: 11400000, guid: 774684c01b745ec43862f5f23edc490c, type: 2}
   - {fileID: 11400000, guid: 6266593fa74ee06449598543d9079c3b, type: 2}
+  - {fileID: 11400000, guid: d480f46ce186fd84fb4f8172e7d41feb, type: 2}
   - {fileID: 11400000, guid: d92d61772b6f2894c9e1a7b109cb6a4e, type: 2}
+  - {fileID: 11400000, guid: 0ee6b8dd1026d0b459df7381d0bd8193, type: 2}
   _spawnArea:
     serializedVersion: 2
     x: -25
