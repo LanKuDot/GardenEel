@@ -12,6 +12,10 @@ namespace Investigate
         [SerializeField]
         private ComponentSelectionUI _componentSelectionUI = null;
         [SerializeField]
+        private CloseSceneCurtain _closeSceneCurtain = null;
+        [SerializeField]
+        private GameObject _maskUI = null;
+        [SerializeField]
         private CinemachineBrain _cinemachine;
 
         private void Awake()
@@ -39,6 +43,14 @@ namespace Investigate
             _cinemachine.m_UpdateMethod = CinemachineBrain.UpdateMethod.SmartUpdate;
             Time.timeScale = 1.0f;
             isPausing = false;
+        }
+
+        public void SwitchToBattle()
+        {
+            GamePause();
+            _maskUI.SetActive(false);
+            _closeSceneCurtain.CloseCurtain(() => Debug.Log("Closed"));
+            //SceneManager.LoadScene(0, LoadSceneMode.Single);
         }
     }
 }

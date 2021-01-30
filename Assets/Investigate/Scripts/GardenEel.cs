@@ -80,12 +80,10 @@ namespace Investigate
         private void OnCollisionEnter2D(Collision2D other)
         {
             if (other.gameObject.CompareTag("Partner"))
-                SelectComponent(other.gameObject.GetComponent<Partner>().data);
-        }
-
-        private void SelectComponent(PartnerData data)
-        {
-            GameplayManager.Instance.SelectComponent(data);
+                GameplayManager.Instance.SelectComponent(
+                    other.gameObject.GetComponent<Partner>().data);
+            else if (other.gameObject.CompareTag("Enemy"))
+                GameplayManager.Instance.SwitchToBattle();
         }
     }
 }
