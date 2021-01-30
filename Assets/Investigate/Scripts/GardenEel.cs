@@ -1,5 +1,4 @@
 ﻿using System;
-using Investigate.UI;
 using UnityEngine;
 
 namespace Investigate
@@ -38,7 +37,6 @@ namespace Investigate
 
         #region Controlling Properties
 
-        private const KeyCode _gatheringKey = KeyCode.Space;
         private float _gatheringTime;
         private readonly int _velocityParamID = Animator.StringToHash("velocity");
 
@@ -54,12 +52,12 @@ namespace Investigate
             if (GameplayManager.Instance.isPausing)
                 return;
 
-            if (Input.GetKeyDown(_gatheringKey))
+            if (Input.GetMouseButtonDown(0))
                 _gatheringTime = 0.0f;
-            else if (Input.GetKey(_gatheringKey))
+            else if (Input.GetMouseButton(0))
                 _gatheringTime =
                     Math.Min(_gatheringTime + Time.deltaTime, _maxGatheringTime);
-            else if (Input.GetKeyUp(_gatheringKey))
+            else if (Input.GetMouseButtonUp(0))
                 SetMoving();
 
             _animator.SetFloat(_velocityParamID, velocity);
