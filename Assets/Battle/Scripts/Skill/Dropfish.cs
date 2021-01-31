@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Dropfish : Skill
 {
-    public string[] skillCommand = { "FROG", "BASS", "EEL", "COD", "CARP", "CRAB" };
+    public string[] skillCommand = { "HEAD", "DROP", "WATER" };
     float coolDown = 30;
     public override void DoSkill(ICharacter self, ICharacter target)
     {
-        target.SetSpeed(3, 0.8f);
+        target.SetSpeed(2, 0.5f);
 
     }
 

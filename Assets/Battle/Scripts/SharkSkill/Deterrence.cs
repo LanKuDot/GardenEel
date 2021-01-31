@@ -7,7 +7,7 @@ public class Deterrence : Skill
     string cmd = "sharrrrrrrrrrrk";
     public override void DoSkill(ICharacter self, ICharacter target)
     {
-        target.TakeDamage(10);
+        target.TakeDamage(5);
         self.Purify();
     }
 

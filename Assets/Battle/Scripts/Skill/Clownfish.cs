@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Clownfish : Skill
 {
-    public string[] skillCommand = { "FROG", "BASS", "EEL", "COD", "CARP", "CRAB" };
-    float coolDown = 40;
+    public string[] skillCommand = { "CLOWNFISHSUMMON", "SEAANEMONE" };
+    float coolDown = 30;
     public override void DoSkill(ICharacter self, ICharacter target)
     {
         self.Recover(30);

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Dodge : Skill
 {
-    public string[] skillCommand = { "FROG", "BASS", "EEL", "COD", "CARP", "CRAB" };
+    public string[] skillCommand = { "COD", "CARP", "CRAB" };
 
     float coolDown = 1;
     public override void DoSkill(ICharacter self, ICharacter target)
     {
-        self.SetDodge(1f);
+        self.SetDodge(5f);
     }
 
     public override string GetSkillCommand()

@@ -8,7 +8,7 @@ public class Swordfish : Skill
     float coolDown = 12;
     public override void DoSkill(ICharacter self, ICharacter target)
     {
-        target.SetDamageOverTime(2, 3);
+        target.SetDamageOverTime(5, 5);
         target.TakeDamage(10);
     }
 

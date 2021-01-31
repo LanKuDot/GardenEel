@@ -7,7 +7,7 @@ public class Hit : Skill
     string cmd = "sharrrrrrrrrrrk";
     public override void DoSkill(ICharacter self, ICharacter target)
     {
-        target.TakeDamage(10);
+        target.TakeDamage(7);
     }
 
     public override string GetSkillCommand()

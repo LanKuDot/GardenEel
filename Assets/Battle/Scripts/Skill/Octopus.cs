@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Octopus : Skill
 {
-    public string[] skillCommand = { "FROG", "BASS", "EEL", "COD", "CARP", "CRAB" };
+    public string[] skillCommand = { "INK", "JET", "OCT" };
     float coolDown = 10;
     public override void DoSkill(ICharacter self, ICharacter target)
     {
-        target.SetBlind(1);
+        target.SetBlind(2);
     }
 
     public override string GetSkillCommand()

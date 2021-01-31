@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class DevouringEel : Skill
 {
-    public string[] skillCommand = { "FROG", "BASS", "EEL", "COD", "CARP", "CRAB" };
+    public string[] skillCommand = { "TEETH", "MOUTH", "SWALL" };
     float coolDown = 20;
     public override void DoSkill(ICharacter self, ICharacter target)
     {
-        target.TakeDamage(15);
-        target.SetDamageOverTime(4, 5);
+        target.TakeDamage(22);
+        target.SetDamageOverTime(4, 7);
     }
 
     public override string GetSkillCommand()
