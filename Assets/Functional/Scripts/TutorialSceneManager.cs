@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 namespace Functional
 {
-    public class ToInvestigate : MonoBehaviour
+    public class TutorialSceneManager : MonoBehaviour
     {
         public void ToInvestigateScene()
         {
