@@ -21,15 +21,16 @@ namespace Investigate.UI
         #endregion
 
         private Sprite _candidateSprite;
+        private Sprite _candidateSkillHintSprite;
         private int _candidateComponentID;
 
         public void SetComponentSprite(PartnerData data)
         {
             _candidateSprite = data.componentSprite;
             _candidateComponentID = data.id;
+            _candidateSkillHintSprite = data.skillHintSprite;
 
             _lastWordImage.sprite = data.lastWordSprite;
-            _skillHintImage.sprite = data.skillHintSprite;
 
             _checkUI.SetActive(true);
         }
@@ -44,6 +45,7 @@ namespace Investigate.UI
             _checkUI.SetActive(false);
             GameplayManager.Instance.GameResume();
 
+            _skillHintImage.sprite = _candidateSkillHintSprite;
             _skillHintAnimator.gameObject.SetActive(true);
             _skillHintAnimator.Play("SkillHint", -1, 0);
         }
