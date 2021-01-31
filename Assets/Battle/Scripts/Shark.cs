@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class Shark : MonoBehaviour, ICharacter
 {
@@ -43,9 +44,8 @@ public class Shark : MonoBehaviour, ICharacter
         hp = Mathf.Max(hp, 0);
         Debug.Log("shark hp: " + hp);
         characterUI.SetHp(hp);
-        if (hp == 0)
-        {
-            Debug.Log("玩家贏");
+        if (hp == 0) {
+            SceneManager.LoadScene("WinResult");
         }
     }
     private void Start()

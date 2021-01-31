@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour, ICharacter
 {
@@ -68,9 +69,8 @@ public class Player : MonoBehaviour, ICharacter
         hp = Mathf.Max(hp, 0);
         characterUI.SetHp(hp);
 
-        if (hp == 0)
-        {
-            Debug.Log("鯊魚贏");
+        if (hp == 0) {
+            SceneManager.LoadScene("LoseResult");
         }
     }
     private void Start()
