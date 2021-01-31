@@ -21,6 +21,7 @@ namespace Investigate
         {
             _bgmAudioPlayer.Stop();
             _bgmAudioPlayer.clip = _caughtBySharkSound;
+            _bgmAudioPlayer.volume = 0.4f;
             _bgmAudioPlayer.Play();
         }
 
