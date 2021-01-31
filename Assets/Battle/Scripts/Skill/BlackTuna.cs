@@ -10,6 +10,7 @@ public class BlackTuna : Skill
     public override void DoSkill(ICharacter self, ICharacter target)
     {
         target.TakeDamage(damage);
+        Debug.Log(this.ToString());
     }
 
     public override float GetCoolDown()

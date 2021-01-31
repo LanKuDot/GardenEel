@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Shark : MonoBehaviour, ICharacter
 {
     [SerializeField] float timeBeforeAction = 7f;
@@ -9,7 +9,11 @@ public class Shark : MonoBehaviour, ICharacter
     public CharacterUIController characterUI;
     public float hp = 100;
     public Player player;
+    public AudioSource bgm;
+    public List<AudioClip> bgms = new List<AudioClip>();
     List<Skill> skills = new List<Skill>();
+    public Image image;
+
     int skillIndex = 0;
     float speed;
     int speedCount = 0;
@@ -39,11 +43,15 @@ public class Shark : MonoBehaviour, ICharacter
         hp = Mathf.Max(hp, 0);
         Debug.Log("shark hp: " + hp);
         characterUI.SetHp(hp);
-
+        if (hp == 0)
+        {
+            Debug.Log("玩家贏");
+        }
     }
     private void Start()
     {
         player = GetComponent<Player>();
+
         skills.Add(new Hit());
         skills.Add(new Flick());
         skills.Add(new Swallow());
@@ -54,6 +62,7 @@ public class Shark : MonoBehaviour, ICharacter
     {
 
         timer -= Time.deltaTime * speed;
+        image.fillAmount = 1 - timer / timeBeforeAction;
         if (timer <= 0)
         {
             DoAction();
@@ -96,6 +105,7 @@ public class Shark : MonoBehaviour, ICharacter
     void StartNewAction()
     {
         timer = timeBeforeAction;
+        skillIndex = Random.Range(0, 4);
     }
 
     public void SetDamageOverTime(int time, float damagePerTime)
@@ -105,7 +115,7 @@ public class Shark : MonoBehaviour, ICharacter
 
     public void SetBlind(int time)
     {
-        throw new System.NotImplementedException();
+        blindCount = time;
     }
 
     public void Purify()

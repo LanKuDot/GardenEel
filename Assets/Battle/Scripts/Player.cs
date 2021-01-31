@@ -35,7 +35,7 @@ public class Player : MonoBehaviour, ICharacter
 
     public void SetDodge(float time)
     {
-        throw new System.NotImplementedException();
+        dodgeTime = time;
     }
 
     public void SetReflectDamage(float time)
@@ -67,6 +67,11 @@ public class Player : MonoBehaviour, ICharacter
         hp -= value * damageRate;
         hp = Mathf.Max(hp, 0);
         characterUI.SetHp(hp);
+
+        if (hp == 0)
+        {
+            Debug.Log("鯊魚贏");
+        }
     }
     private void Start()
     {
