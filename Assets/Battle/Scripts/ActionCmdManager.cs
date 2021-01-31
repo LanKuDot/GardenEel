@@ -14,7 +14,9 @@ public class ActionCmdManager : MonoBehaviour
     //Skill currentSkill;
     Shark shark;
     List<Skill> skills = new List<Skill>();
-    int skillIndex;
+    int skillIndex = 1;
+    public List<Image> coolDownImage = new List<Image>();
+    public List<float> coolDownTime = new List<float>();
     private void OnGUI()
     {
         if (currentText == "")
@@ -63,11 +65,17 @@ public class ActionCmdManager : MonoBehaviour
 
 
         skills.Add(null);
+        coolDownTime.Add(0);
         skills.Add(new NormalAttack());
-        skills.Add(new NormalAttack());
-        skills.Add(new NormalAttack());
-        skills.Add(new NormalAttack());
-        skills.Add(new NormalAttack());
+        coolDownTime.Add(skills[1].GetCoolDown());
+        skills.Add(new BlackTuna());
+        coolDownTime.Add(skills[2].GetCoolDown());
+        skills.Add(new Clownfish());
+        coolDownTime.Add(skills[3].GetCoolDown());
+        skills.Add(new DevouringEel());
+        coolDownTime.Add(skills[4].GetCoolDown());
+        skills.Add(new Dolphin());
+        coolDownTime.Add(skills[5].GetCoolDown());
 
 
     }
@@ -75,30 +83,46 @@ public class ActionCmdManager : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Alpha1))
         {
-            Debug.Log("1");
+
+
             skillIndex = 1;
             StartNewSkill();
         }
         if (Input.GetKeyUp(KeyCode.Alpha2))
         {
+
             skillIndex = 2;
             StartNewSkill();
         }
         if (Input.GetKeyUp(KeyCode.Alpha3))
         {
+
             skillIndex = 3;
             StartNewSkill();
         }
         if (Input.GetKeyUp(KeyCode.Alpha4))
         {
+
             skillIndex = 4;
             StartNewSkill();
         }
         if (Input.GetKeyUp(KeyCode.Alpha5))
         {
+
             skillIndex = 5;
             StartNewSkill();
         }
+
+        for (int i = 1; i < coolDownTime.Count; i++)
+        {
+            if (coolDownTime[i] <= skills[i].GetCoolDown())
+            {
+                coolDownTime[i] += Time.deltaTime;
+            }
+            coolDownImage[i].fillAmount = 1f - (coolDownTime[i] / skills[i].GetCoolDown());
+        }
+
+
     }
     void UpdateText()
     {
@@ -108,6 +132,8 @@ public class ActionCmdManager : MonoBehaviour
 
     public void StartNewSkill()
     {
+        if (coolDownImage[skillIndex].fillAmount > 0) return;
+
         redText = "";
         whiteText = skills[skillIndex].GetSkillCommand();
 
@@ -124,6 +150,7 @@ public class ActionCmdManager : MonoBehaviour
         redText = "";
         currentText = "";
         UpdateText();
+        coolDownTime[skillIndex] = 0;
     }
 
 }

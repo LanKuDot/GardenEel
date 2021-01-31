@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-public class NormalAttack : Skill
+
+public class Swordfish : Skill
 {
-    public string[] skillCommand = { "FROG", "BASS", "EEL" };
-    float coolDown = 1f;
+    public string[] skillCommand = { "SAO", "SWO" };
+    float coolDown = 12;
     public override void DoSkill(ICharacter self, ICharacter target)
     {
-        target.TakeDamage(2);
+        target.SetDamageOverTime(2, 3);
+        target.TakeDamage(10);
     }
 
     public override string GetSkillCommand()
@@ -19,4 +20,5 @@ public class NormalAttack : Skill
     {
         return coolDown;
     }
+
 }
