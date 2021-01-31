@@ -12,6 +12,8 @@ namespace Investigate.UI
         [SerializeField]
         private GameObject _checkUI = null;
         [SerializeField]
+        private Animator _checkUIAnimator = null;
+        [SerializeField]
         private Image _lastWordImage = null;
         [SerializeField]
         private Image _skillHintImage = null;
@@ -33,6 +35,7 @@ namespace Investigate.UI
             _lastWordImage.sprite = data.lastWordSprite;
 
             _checkUI.SetActive(true);
+            _checkUIAnimator.Play("CheckUIIn", -1, 0);
         }
 
         public void ConfirmComponent()

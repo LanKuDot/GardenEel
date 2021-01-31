@@ -260,6 +260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 110715149}
+  - component: {fileID: 110715150}
   m_Layer: 5
   m_Name: CheckUI
   m_TagString: Untagged
@@ -290,6 +291,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &110715150
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110715148}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c81821835e150ab4b9f148fc4d458106, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &114014124
 GameObject:
   m_ObjectHideFlags: 3
@@ -540,6 +560,7 @@ MonoBehaviour:
   - {fileID: 1227260483}
   - {fileID: 364676723}
   _checkUI: {fileID: 110715148}
+  _checkUIAnimator: {fileID: 110715150}
   _lastWordImage: {fileID: 1925254867}
   _skillHintImage: {fileID: 204942269}
   _skillHintAnimator: {fileID: 204942271}
