@@ -1,14 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-public class NormalAttack : Skill
+
+public class Dolphin : Skill
 {
-    public string[] skillCommand = { "FROG", "BASS", "EEL" };
-    float coolDown = 1f;
+    public string[] skillCommand = { "FROG", "BASS", "EEL", "COD", "CARP", "CRAB" };
+
+    float coolDown = 12;
     public override void DoSkill(ICharacter self, ICharacter target)
     {
-        target.TakeDamage(2);
+        for (int i = 0; i < 4; i++)
+        {
+            target.TakeDamage(Random.Range(2, 6));
+        }
+
+
+
     }
 
     public override string GetSkillCommand()
@@ -19,4 +26,5 @@ public class NormalAttack : Skill
     {
         return coolDown;
     }
+
 }

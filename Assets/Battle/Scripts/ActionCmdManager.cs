@@ -14,7 +14,12 @@ public class ActionCmdManager : MonoBehaviour
     //Skill currentSkill;
     Shark shark;
     List<Skill> skills = new List<Skill>();
-    int skillIndex;
+    int skillIndex = 1;
+    public List<Image> coolDownImage = new List<Image>();
+    public List<float> coolDownTime = new List<float>();
+    Dictionary<int, Skill> skillDictionary = new Dictionary<int, Skill>();
+    public List<Sprite> skillSprites = new List<Sprite>();
+    public List<Image> skillIconImages = new List<Image>();
     private void OnGUI()
     {
         if (currentText == "")
@@ -55,19 +60,62 @@ public class ActionCmdManager : MonoBehaviour
     }
     private void Start()
     {
+        var normal = new NormalAttack();
+        skillDictionary.Add(-1, normal);
+        skillDictionary.Add(0, normal);
+        skillDictionary.Add(1, new Dodge());
+        skillDictionary.Add(2, new Swordfish());
+        skillDictionary.Add(3, new Octopus());
+        skillDictionary.Add(4, new Dropfish());
+        skillDictionary.Add(5, new DevouringEel());
+        skillDictionary.Add(6, new Dolphin());
+        skillDictionary.Add(7, new Clownfish());
+        skillDictionary.Add(8, new BlackTuna());
+        skillDictionary.Add(9, new Pufferfish());
+        skillDictionary.Add(10, new ElectricEel());
+        skillDictionary.Add(11, new SeaUrchin());
+        skillDictionary.Add(12, new Jellyfish());
+
+
+
         //Debug.Log(KeyCode.O.ToString());
+
+        Time.timeScale = 1;
         remainText.text = "";
         UpdateText();
         player = gameObject.GetComponent<Player>();
         shark = GetComponent<Shark>();
+        Debug.Log(Investigate.GardenEelComponent.Instance.componentIDs[0]);
+        Debug.Log(Investigate.GardenEelComponent.Instance.componentIDs[1]);
+
+        Debug.Log(Investigate.GardenEelComponent.Instance.componentIDs[2]);
+
 
 
         skills.Add(null);
-        skills.Add(new NormalAttack());
-        skills.Add(new NormalAttack());
-        skills.Add(new NormalAttack());
-        skills.Add(new NormalAttack());
-        skills.Add(new NormalAttack());
+        coolDownTime.Add(0);
+        skills.Add(skillDictionary[0]);
+        coolDownTime.Add(skills[1].GetCoolDown());
+        skillIconImages[0].sprite = skillSprites[0];
+
+        skills.Add(skillDictionary[1]);
+        coolDownTime.Add(skills[2].GetCoolDown());
+        skillIconImages[1].sprite = skillSprites[1];
+
+        skills.Add(skillDictionary[Investigate.GardenEelComponent.Instance.componentIDs[0]]);
+        coolDownTime.Add(skills[3].GetCoolDown());
+        skillIconImages[2].sprite = skillSprites[Mathf.Max(Investigate.GardenEelComponent.Instance.componentIDs[0], 0)];
+
+
+        skills.Add(skillDictionary[Investigate.GardenEelComponent.Instance.componentIDs[1]]);
+        coolDownTime.Add(skills[4].GetCoolDown());
+        skillIconImages[3].sprite = skillSprites[Mathf.Max(Investigate.GardenEelComponent.Instance.componentIDs[1], 0)];
+
+
+        skills.Add(skillDictionary[Investigate.GardenEelComponent.Instance.componentIDs[2]]);
+        coolDownTime.Add(skills[5].GetCoolDown());
+        skillIconImages[4].sprite = skillSprites[Mathf.Max(Investigate.GardenEelComponent.Instance.componentIDs[2], 0)];
+
 
 
     }
@@ -75,30 +123,46 @@ public class ActionCmdManager : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Alpha1))
         {
-            Debug.Log("1");
+
+
             skillIndex = 1;
             StartNewSkill();
         }
         if (Input.GetKeyUp(KeyCode.Alpha2))
         {
+
             skillIndex = 2;
             StartNewSkill();
         }
         if (Input.GetKeyUp(KeyCode.Alpha3))
         {
+
             skillIndex = 3;
             StartNewSkill();
         }
         if (Input.GetKeyUp(KeyCode.Alpha4))
         {
+
             skillIndex = 4;
             StartNewSkill();
         }
         if (Input.GetKeyUp(KeyCode.Alpha5))
         {
+
             skillIndex = 5;
             StartNewSkill();
         }
+
+        for (int i = 1; i < coolDownTime.Count; i++)
+        {
+            if (coolDownTime[i] <= skills[i].GetCoolDown())
+            {
+                coolDownTime[i] += Time.deltaTime;
+            }
+            coolDownImage[i].fillAmount = 1f - (coolDownTime[i] / skills[i].GetCoolDown());
+        }
+
+
     }
     void UpdateText()
     {
@@ -108,6 +172,8 @@ public class ActionCmdManager : MonoBehaviour
 
     public void StartNewSkill()
     {
+        if (coolDownImage[skillIndex].fillAmount > 0) return;
+
         redText = "";
         whiteText = skills[skillIndex].GetSkillCommand();
 
@@ -120,10 +186,12 @@ public class ActionCmdManager : MonoBehaviour
     public void DoSkill()
     {
         skills[skillIndex].DoSkill(player, shark);
+
         whiteText = "";
         redText = "";
         currentText = "";
         UpdateText();
+        coolDownTime[skillIndex] = 0;
     }
 
 }

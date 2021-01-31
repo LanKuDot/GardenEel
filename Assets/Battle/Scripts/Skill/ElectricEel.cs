@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-public class NormalAttack : Skill
+
+public class ElectricEel : Skill
 {
-    public string[] skillCommand = { "FROG", "BASS", "EEL" };
-    float coolDown = 1f;
+    public string[] skillCommand = { "FROG", "BASS", "EEL", "COD", "CARP", "CRAB" };
+    float coolDown = 23;
     public override void DoSkill(ICharacter self, ICharacter target)
     {
-        target.TakeDamage(2);
+        target.SetSpeed(2, 0.85f);
+        target.SetDamageOverTime(2, 2);
     }
 
     public override string GetSkillCommand()
@@ -19,4 +20,5 @@ public class NormalAttack : Skill
     {
         return coolDown;
     }
+
 }

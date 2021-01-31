@@ -1,22 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-public class NormalAttack : Skill
+
+public class Hit : Skill
 {
-    public string[] skillCommand = { "FROG", "BASS", "EEL" };
-    float coolDown = 1f;
+    string cmd = "sharrrrrrrrrrrk";
     public override void DoSkill(ICharacter self, ICharacter target)
     {
-        target.TakeDamage(2);
+        target.TakeDamage(10);
     }
 
     public override string GetSkillCommand()
     {
-        return skillCommand[Random.Range(0, skillCommand.Length)];
+        return cmd;
     }
     public override float GetCoolDown()
     {
-        return coolDown;
+        throw new System.NotImplementedException();
     }
 }
