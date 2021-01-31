@@ -8,6 +8,8 @@ namespace Investigate.UI
         #region Serialized Fields
 
         [SerializeField]
+        private SFXManager _sfxManager = null;
+        [SerializeField]
         private Image[] _componentImages = null;
         [SerializeField]
         private GameObject _checkUI = null;
@@ -36,6 +38,7 @@ namespace Investigate.UI
 
             _checkUI.SetActive(true);
             _checkUIAnimator.Play("CheckUIIn", -1, 0);
+            _sfxManager.PlayFindPartner();
         }
 
         public void ConfirmComponent()
@@ -51,12 +54,14 @@ namespace Investigate.UI
             _skillHintImage.sprite = _candidateSkillHintSprite;
             _skillHintAnimator.gameObject.SetActive(true);
             _skillHintAnimator.Play("SkillHint", -1, 0);
+            _sfxManager.PlayConfirm();
         }
 
         public void CancelComponent()
         {
             _checkUI.SetActive(false);
             GameplayManager.Instance.GameResume();
+            _sfxManager.PlayCancel();
         }
 
         private void AppendSprite(int targetSlotID, bool toAppend)
