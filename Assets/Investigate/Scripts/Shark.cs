@@ -49,15 +49,22 @@ namespace Investigate
 
         private IEnumerator FreeMoving()
         {
-            while (true) {
+            var freeMovingTimeout = 60.0f;
+            var curTime = 0.0f;
+
+            while (curTime < freeMovingTimeout) {
                 _direction =
                     Quaternion.Euler(0, 0, Random.Range(0, 360)) * Vector3.up;
 
-                yield return new WaitForSeconds(
-                    Random.Range(
-                        _freeMovingIntervalRange.x,
-                        _freeMovingIntervalRange.y));
+                var waitTime = Random.Range(
+                    _freeMovingIntervalRange.x,
+                    _freeMovingIntervalRange.y);
+                yield return new WaitForSeconds(waitTime);
+
+                curTime += waitTime;
             }
+
+            _tracingRange = 1000.0f;
         }
 
         private IEnumerator SpriteChanging()
