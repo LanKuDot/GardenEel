@@ -16,6 +16,7 @@ MonoBehaviour:
   _sprites:
   - {fileID: 21300000, guid: e804bc5ba44034c439a12df7ca4d2d33, type: 3}
   - {fileID: 21300000, guid: b2a668d6e1960204780960bc2a309488, type: 3}
+  _spriteScale: 0.8
   _componentSprite: {fileID: 21300000, guid: ae73f531b8c1b1c46af7d92cd00d1866, type: 3}
   _componentType: 2
   _lastWordSprite: {fileID: 21300000, guid: afde294756538e142bba0a0aee9b92fb, type: 3}

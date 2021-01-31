@@ -12,6 +12,8 @@ namespace Investigate
         [SerializeField]
         private Sprite[] _sprites = null;
         [SerializeField]
+        private float _spriteScale = 1.0f;
+        [SerializeField]
         private Sprite _componentSprite = null;
         [SerializeField]
         private GardenEel.BodyType _componentType = GardenEel.BodyType.Body;
@@ -22,6 +24,7 @@ namespace Investigate
 
         public int id => _id;
         public Sprite[] sprites => _sprites;
+        public float spriteScale => _spriteScale;
         public Sprite componentSprite => _componentSprite;
         public GardenEel.BodyType componentType => _componentType;
         public Sprite lastWordSprite => _lastWordSprite;
