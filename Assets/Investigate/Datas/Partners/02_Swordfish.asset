@@ -18,5 +18,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1c37b9f21e76666469c1274ee295aa6c, type: 3}
   _componentSprite: {fileID: 21300000, guid: aee4dda6824d37841a8b08c303657439, type: 3}
   _componentType: 0
-  _skillExplainStr: "\u4F60\u7372\u5F97\u4E86<color=red>\u5C16\u523A</color>\uFF01\u53EF\u4EE5\u4F7F\u6575\u4EBA\u6BCF\u56DE\u5408\u640D\u5931\u56FA\u5B9A\u751F\u547D\u503C"
-  _lastWordStr: "\u6211\u7684\u6B66\u5668\u2026\u4F60\u5C31\u6536\u4E0B\u5427\uFF0C\u5E6B\u6211\u7684\u5973\u670B\u53CB\u5831\u4EC7\uFF01"
+  _lastWordSprite: {fileID: 21300000, guid: f890893903936da45ae73619931da927, type: 3}
+  _skillHintSprite: {fileID: 21300000, guid: c55e674e0f43d124986537a1ba1bc12d, type: 3}

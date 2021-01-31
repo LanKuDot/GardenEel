@@ -5,30 +5,29 @@ namespace Investigate.UI
 {
     public class ComponentSelectionUI : MonoBehaviour
     {
+        #region Serialized Fields
+
         [SerializeField]
         private Image[] _componentImages = null;
         [SerializeField]
         private GameObject _checkUI = null;
         [SerializeField]
-        private Image _targetComponent = null;
+        private Image _lastWordImage = null;
         [SerializeField]
-        private Text _lastWordText = null;
-        [SerializeField]
-        private Text _skillExplainText = null;
+        private Image _skillHintImage = null;
 
-        private GardenEel.BodyType _candidateType;
+        #endregion
+
         private Sprite _candidateSprite;
         private int _candidateComponentID;
 
         public void SetComponentSprite(PartnerData data)
         {
-            _candidateType = data.componentType;
             _candidateSprite = data.componentSprite;
             _candidateComponentID = data.id;
 
-            _targetComponent.sprite = _candidateSprite;
-            _lastWordText.text = data.lastWordStr;
-            _skillExplainText.text = data.skillExplainStr;
+            _lastWordImage.sprite = data.lastWordSprite;
+            _skillHintImage.sprite = data.skillHintSprite;
 
             _checkUI.SetActive(true);
         }
