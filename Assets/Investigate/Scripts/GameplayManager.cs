@@ -10,6 +10,8 @@ namespace Investigate
         public bool isPausing { get; private set; }
 
         [SerializeField]
+        private AudioSource _bgmPlayer = null;
+        [SerializeField]
         private ComponentSelectionUI _componentSelectionUI = null;
         [SerializeField]
         private CloseSceneCurtain _closeSceneCurtain = null;
@@ -47,6 +49,7 @@ namespace Investigate
         public void SwitchToBattle()
         {
             GamePause();
+            _bgmPlayer.Stop();
             _maskUI.SetActive(false);
             _closeSceneCurtain.CloseCurtain(() => Debug.Log("Closed"));
             //SceneManager.LoadScene(0, LoadSceneMode.Single);

@@ -1903,6 +1903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e70dc70d270857e4f98f5ebdee84b26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bgmPlayer: {fileID: 12751752}
   _componentSelectionUI: {fileID: 183326214}
   _closeSceneCurtain: {fileID: 1925897395}
   _maskUI: {fileID: 1709501102}
