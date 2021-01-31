@@ -22,6 +22,8 @@ namespace Functional
         private Sprite _secondTextSprite = null;
         [SerializeField]
         private GameObject _characterObject = null;
+        [SerializeField]
+        private GameObject _deadBodyObject = null;
 
         private void Awake()
         {
@@ -34,6 +36,7 @@ namespace Functional
             _textImage.sprite = _secondTextSprite;
             _textImage.rectTransform.anchoredPosition = _nextImagePos;
             _characterObject.SetActive(true);
+            _deadBodyObject.SetActive(false);
             StartCoroutine(CountDown());
         }
 
