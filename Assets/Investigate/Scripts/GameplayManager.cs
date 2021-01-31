@@ -49,8 +49,7 @@ namespace Investigate
         public void SwitchToBattle()
         {
             GamePause();
-            _sfxManager.StopBGM();
-            _sfxManager.PlayCaughtByShark();
+            _sfxManager.SwitchToBattleBGM();
             _maskUI.SetActive(false);
             _closeSceneCurtain.CloseCurtain(() => Debug.Log("Closed"));
             //SceneManager.LoadScene(0, LoadSceneMode.Single);

@@ -17,9 +17,11 @@ namespace Investigate
         [SerializeField]
         private AudioClip _caughtBySharkSound = null;
 
-        public void StopBGM()
+        public void SwitchToBattleBGM()
         {
             _bgmAudioPlayer.Stop();
+            _bgmAudioPlayer.clip = _caughtBySharkSound;
+            _bgmAudioPlayer.Play();
         }
 
         public void PlayConfirm()
@@ -37,12 +39,6 @@ namespace Investigate
         public void PlayFindPartner()
         {
             _sfxAudioPlayer.clip = _findPartnerSound;
-            _sfxAudioPlayer.Play();
-        }
-
-        public void PlayCaughtByShark()
-        {
-            _sfxAudioPlayer.clip = _caughtBySharkSound;
             _sfxAudioPlayer.Play();
         }
     }
