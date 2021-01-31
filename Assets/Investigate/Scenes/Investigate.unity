@@ -682,7 +682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43e2a2ffc57a8154faf75dc4bbba741d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sfxManager: {fileID: 1493059582}
+  _sfxManager: {fileID: 772911602}
   _componentImages:
   - {fileID: 2070767868}
   - {fileID: 1227260483}
@@ -1823,6 +1823,7 @@ GameObject:
   - component: {fileID: 772911598}
   - component: {fileID: 772911601}
   - component: {fileID: 772911600}
+  - component: {fileID: 772911602}
   m_Layer: 0
   m_Name: -- System --
   m_TagString: Untagged
@@ -1903,11 +1904,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e70dc70d270857e4f98f5ebdee84b26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bgmPlayer: {fileID: 12751752}
+  _sfxManager: {fileID: 772911602}
   _componentSelectionUI: {fileID: 183326214}
   _closeSceneCurtain: {fileID: 1925897395}
   _maskUI: {fileID: 1709501102}
   _cinemachine: {fileID: 519420030}
+--- !u!114 &772911602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772911597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4638d0073c01f144d8aeeec082b5b0be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bgmAudioPlayer: {fileID: 12751752}
+  _sfxAudioPlayer: {fileID: 1493059581}
+  _confirmSound: {fileID: 8300000, guid: 79fbab4df3d4ca44985b5a550061f4bc, type: 3}
+  _cancelSound: {fileID: 8300000, guid: d22d6ca0c5afa83449625703a98f885d, type: 3}
+  _findPartnerSound: {fileID: 8300000, guid: 449cf933f29201f4cb9919ccac70536b, type: 3}
+  _caughtBySharkSound: {fileID: 8300000, guid: 6df4ac4f9217edc43b47e75eaa69fef8, type: 3}
 --- !u!1 &830115980
 GameObject:
   m_ObjectHideFlags: 0
@@ -3011,7 +3030,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1493059580}
   - component: {fileID: 1493059581}
-  - component: {fileID: 1493059582}
   m_Layer: 0
   m_Name: SFX
   m_TagString: Untagged
@@ -3129,22 +3147,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1493059582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1493059579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4638d0073c01f144d8aeeec082b5b0be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _audioPlayer: {fileID: 1493059581}
-  _confirmSound: {fileID: 8300000, guid: 79fbab4df3d4ca44985b5a550061f4bc, type: 3}
-  _cancelSound: {fileID: 8300000, guid: d22d6ca0c5afa83449625703a98f885d, type: 3}
-  _findPartnerSound: {fileID: 8300000, guid: 449cf933f29201f4cb9919ccac70536b, type: 3}
 --- !u!1 &1565646297
 GameObject:
   m_ObjectHideFlags: 0

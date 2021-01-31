@@ -10,7 +10,7 @@ namespace Investigate
         public bool isPausing { get; private set; }
 
         [SerializeField]
-        private AudioSource _bgmPlayer = null;
+        private SFXManager _sfxManager;
         [SerializeField]
         private ComponentSelectionUI _componentSelectionUI = null;
         [SerializeField]
@@ -49,7 +49,8 @@ namespace Investigate
         public void SwitchToBattle()
         {
             GamePause();
-            _bgmPlayer.Stop();
+            _sfxManager.StopBGM();
+            _sfxManager.PlayCaughtByShark();
             _maskUI.SetActive(false);
             _closeSceneCurtain.CloseCurtain(() => Debug.Log("Closed"));
             //SceneManager.LoadScene(0, LoadSceneMode.Single);

@@ -5,30 +5,45 @@ namespace Investigate
     public class SFXManager : MonoBehaviour
     {
         [SerializeField]
-        private AudioSource _audioPlayer = null;
+        private AudioSource _bgmAudioPlayer = null;
+        [SerializeField]
+        private AudioSource _sfxAudioPlayer = null;
         [SerializeField]
         private AudioClip _confirmSound = null;
         [SerializeField]
         private AudioClip _cancelSound = null;
         [SerializeField]
         private AudioClip _findPartnerSound = null;
+        [SerializeField]
+        private AudioClip _caughtBySharkSound = null;
+
+        public void StopBGM()
+        {
+            _bgmAudioPlayer.Stop();
+        }
 
         public void PlayConfirm()
         {
-            _audioPlayer.clip = _confirmSound;
-            _audioPlayer.Play();
+            _sfxAudioPlayer.clip = _confirmSound;
+            _sfxAudioPlayer.Play();
         }
 
         public void PlayCancel()
         {
-            _audioPlayer.clip = _cancelSound;
-            _audioPlayer.Play();
+            _sfxAudioPlayer.clip = _cancelSound;
+            _sfxAudioPlayer.Play();
         }
 
         public void PlayFindPartner()
         {
-            _audioPlayer.clip = _findPartnerSound;
-            _audioPlayer.Play();
+            _sfxAudioPlayer.clip = _findPartnerSound;
+            _sfxAudioPlayer.Play();
+        }
+
+        public void PlayCaughtByShark()
+        {
+            _sfxAudioPlayer.clip = _caughtBySharkSound;
+            _sfxAudioPlayer.Play();
         }
     }
 }
