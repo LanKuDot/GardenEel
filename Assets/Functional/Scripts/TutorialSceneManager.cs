@@ -7,6 +7,8 @@ namespace Functional
     {
         public void ToInvestigateScene()
         {
+            var obj = FindObjectOfType<AudioSource>();
+            Destroy(obj.gameObject);
             SceneManager.LoadScene("Investigate");
         }
     }
