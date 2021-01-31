@@ -1,4 +1,5 @@
-﻿using Cinemachine;
+﻿using System;
+using Cinemachine;
 using Investigate.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -24,6 +25,11 @@ namespace Investigate
         private void Awake()
         {
             Instance = this;
+        }
+
+        private void Start()
+        {
+            Time.timeScale = 1.0f;
         }
 
         public void SelectComponent(PartnerData data)
