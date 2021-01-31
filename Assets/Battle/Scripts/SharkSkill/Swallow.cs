@@ -7,7 +7,7 @@ public class Swallow : Skill
     string cmd = "sharrrrrrrrrrrk";
     public override void DoSkill(ICharacter self, ICharacter target)
     {
-        target.TakeDamage(15);
+        target.TakeDamage(20);
     }
 
     public override string GetSkillCommand()
