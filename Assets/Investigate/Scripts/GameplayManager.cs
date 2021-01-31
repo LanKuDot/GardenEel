@@ -1,6 +1,7 @@
 ﻿using Cinemachine;
 using Investigate.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Investigate
 {
@@ -51,8 +52,8 @@ namespace Investigate
             GamePause();
             _sfxManager.SwitchToBattleBGM();
             _maskUI.SetActive(false);
-            _closeSceneCurtain.CloseCurtain(() => Debug.Log("Closed"));
-            //SceneManager.LoadScene(0, LoadSceneMode.Single);
+            _closeSceneCurtain.CloseCurtain(() =>
+                SceneManager.LoadScene("MainBattle"));
         }
     }
 }
