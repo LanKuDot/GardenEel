@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834226be768c9584f9e6a789cfe71896, type: 3}
+  m_Name: 03_Octopus
+  m_EditorClassIdentifier: 
+  _id: 3
+  _sprites:
+  - {fileID: 21300000, guid: 45a38ec9110e99640b0669200d0f392f, type: 3}
+  - {fileID: 21300000, guid: b5a946237e4639e4ba5a5f0a758a5b09, type: 3}
+  _spriteScale: 0.4
+  _componentSprite: {fileID: 21300000, guid: b5da5b2dee6f2f14c82924188f170847, type: 3}
+  _componentType: 0
+  _lastWordSprite: {fileID: 21300000, guid: 3cf69ad9e87a1d4449a0d22c8e4911b3, type: 3}
+  _skillHintSprite: {fileID: 21300000, guid: 70ae83e5b895f3c4880dcb75b6d54192, type: 3}

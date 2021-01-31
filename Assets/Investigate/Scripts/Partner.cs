@@ -49,6 +49,8 @@ namespace Investigate
             _freeMovingRadius =
                 Random.Range(
                     _freeMovingRadiusRange.x, _freeMovingRadiusRange.y);
+
+            transform.localScale = Vector3.one * data.spriteScale;
         }
 
         private void Start()

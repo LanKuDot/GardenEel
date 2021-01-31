@@ -13,6 +13,8 @@ namespace Investigate
         [SerializeField]
         private Sprite[] _sprites;
         [SerializeField]
+        private Vector2[] _spawnPoints;
+        [SerializeField]
         private Vector2 _freeMovingIntervalRange = new Vector2(2.0f, 3.0f);
         [SerializeField]
         private float _movingVelocity = 5.0f;
@@ -34,8 +36,15 @@ namespace Investigate
 
         private void Start()
         {
+            RandomSpawnPoint();
             StartCoroutine(FreeMoving());
             StartCoroutine(SpriteChanging());
+        }
+
+        private void RandomSpawnPoint()
+        {
+            var id = Random.Range(0, _spawnPoints.Length);
+            transform.position = _spawnPoints[id];
         }
 
         private IEnumerator FreeMoving()

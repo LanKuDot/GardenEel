@@ -166,4 +166,4 @@ MonoBehaviour:
   _rigidbody: {fileID: 4593878236426026454}
   _animator: {fileID: 4593878236426026449}
   _maxGatheringTime: 2
-  _movingForceRange: {x: 10, y: 30}
+  _movingForceRange: {x: 5, y: 30}

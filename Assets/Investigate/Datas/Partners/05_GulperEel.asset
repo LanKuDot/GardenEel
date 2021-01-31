@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834226be768c9584f9e6a789cfe71896, type: 3}
+  m_Name: 05_GulperEel
+  m_EditorClassIdentifier: 
+  _id: 5
+  _sprites:
+  - {fileID: 21300000, guid: 5e7f427561dd4144ebf34339751b3d91, type: 3}
+  - {fileID: 21300000, guid: 4c7247878b7bc264490e77543f62511b, type: 3}
+  _spriteScale: 0.4
+  _componentSprite: {fileID: 21300000, guid: 78726d936bd90d941bdfadbf159e8122, type: 3}
+  _componentType: 0
+  _lastWordSprite: {fileID: 21300000, guid: ecd6a1955040d6740898188c999c1eab, type: 3}
+  _skillHintSprite: {fileID: 21300000, guid: a8345ba52ed3cd34eb62cdf72df0d852, type: 3}

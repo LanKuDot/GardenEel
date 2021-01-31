@@ -10,6 +10,8 @@ namespace Investigate
         public bool isPausing { get; private set; }
 
         [SerializeField]
+        private SFXManager _sfxManager;
+        [SerializeField]
         private ComponentSelectionUI _componentSelectionUI = null;
         [SerializeField]
         private CloseSceneCurtain _closeSceneCurtain = null;
@@ -25,8 +27,7 @@ namespace Investigate
 
         public void SelectComponent(PartnerData data)
         {
-            _componentSelectionUI.SetComponentSprite(
-                data.componentType, data.componentSprite, data.id);
+            _componentSelectionUI.SetComponentSprite(data);
             // The game will resume after the component is selected
             GamePause();
         }
@@ -48,6 +49,7 @@ namespace Investigate
         public void SwitchToBattle()
         {
             GamePause();
+            _sfxManager.SwitchToBattleBGM();
             _maskUI.SetActive(false);
             _closeSceneCurtain.CloseCurtain(() => Debug.Log("Closed"));
             //SceneManager.LoadScene(0, LoadSceneMode.Single);
