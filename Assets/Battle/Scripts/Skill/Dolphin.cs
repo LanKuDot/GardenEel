@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Dolphin : Skill
 {
-    public string[] skillCommand = { "FROG", "BASS", "EEL", "COD", "CARP", "CRAB" };
+    public string[] skillCommand = { "TAIL", "DOLL", "SMART" };
 
     float coolDown = 12;
     public override void DoSkill(ICharacter self, ICharacter target)
     {
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 7; i++)
         {
             target.TakeDamage(Random.Range(2, 6));
         }

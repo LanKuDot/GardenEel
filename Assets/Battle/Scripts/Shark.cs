@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Shark : MonoBehaviour, ICharacter
 {
-    [SerializeField] float timeBeforeAction = 7f;
+    [SerializeField] float timeBeforeAction = 13f;
     float timer;
     public CharacterUIController characterUI;
     public float hp = 100;

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BlackTuna : Skill
 {
-    public string[] skillCommand = { "FROG", "BASS", "EEL", "COD", "CARP", "CRAB" };
-    float damage = 7;
+    public string[] skillCommand = { "BTUNA", "TAILATK", "CAUDAL" };
+    float damage = 14;
     float coolDown = 10;
     public override void DoSkill(ICharacter self, ICharacter target)
     {

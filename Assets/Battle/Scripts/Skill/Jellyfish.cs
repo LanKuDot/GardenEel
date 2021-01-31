@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Jellyfish : Skill
 {
-    public string[] skillCommand = { "FROG", "BASS", "EEL", "COD", "CARP", "CRAB" };
+    public string[] skillCommand = { "POISON", "SPOIL", "JELLY" };
     float coolDown = 14;
     public override void DoSkill(ICharacter self, ICharacter target)
     {
-        target.SetDamageOverTime(4, 5);
+        target.SetDamageOverTime(4, 8);
     }
 
     public override string GetSkillCommand()

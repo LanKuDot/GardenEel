@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ElectricEel : Skill
 {
-    public string[] skillCommand = { "FROG", "BASS", "EEL", "COD", "CARP", "CRAB" };
+    public string[] skillCommand = { "ELECTRIC", "CONDUCT" };
     float coolDown = 23;
     public override void DoSkill(ICharacter self, ICharacter target)
     {

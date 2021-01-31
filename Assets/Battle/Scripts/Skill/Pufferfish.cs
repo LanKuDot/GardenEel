@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pufferfish : Skill
 {
-    public string[] skillCommand = { "FROG", "BASS", "EEL", "COD", "CARP", "CRAB" };
+    public string[] skillCommand = { "TOXIN", "CRUEL", "PUFFER" };
     float coolDown = 15;
     public override void DoSkill(ICharacter self, ICharacter target)
     {

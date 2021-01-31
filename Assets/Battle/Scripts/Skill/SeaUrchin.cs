@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class SeaUrchin : Skill
 {
-    public string[] skillCommand = { "FROG", "BASS", "EEL", "COD", "CARP", "CRAB" };
+    public string[] skillCommand = { "SPI", "TIP", "TOP", "POKE" };
     float coolDown = 10;
     public override void DoSkill(ICharacter self, ICharacter target)
     {
-        self.SetReflectDamage(1f);
+        self.SetReflectDamage(5f);
     }
 
     public override string GetSkillCommand()
