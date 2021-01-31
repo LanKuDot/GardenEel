@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Investigate/Scenes/Investigate.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Battle/Scenes/MainBattle.unity
+    guid: cbe5f6b2056e37c48a445b7e97de1ade
+  - enabled: 1
+    path: Assets/Functional/Scenes/LoseResult.unity
+    guid: 420237ba2944f8c4cadc8bca88c51034
+  - enabled: 1
+    path: Assets/Functional/Scenes/WinResult.unity
+    guid: bbf37a4dfa6688a4f83435558904ec28
   m_configObjects: {}
