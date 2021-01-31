@@ -18,5 +18,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 54356198c113faa41a3f2f759315f54c, type: 3}
   _componentSprite: {fileID: 21300000, guid: 6f4f8315031ef314d9ef2bed1a933d23, type: 3}
   _componentType: 1
-  _lastWordSprite: {fileID: 21300000, guid: 18c4cf737635a4b48a013f029c5edaef, type: 3}
-  _skillHintSprite: {fileID: 21300000, guid: f1adde146d978d74bae6c65fa3611314, type: 3}
+  _lastWordSprite: {fileID: 21300000, guid: a0c6ad3f4c2696b49a63358776c11d61, type: 3}
+  _skillHintSprite: {fileID: 21300000, guid: 70636e5c7558650489f6a32192b723b2, type: 3}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834226be768c9584f9e6a789cfe71896, type: 3}
+  m_Name: 06_Dolphin
+  m_EditorClassIdentifier: 
+  _id: 6
+  _sprites:
+  - {fileID: 21300000, guid: e804bc5ba44034c439a12df7ca4d2d33, type: 3}
+  - {fileID: 21300000, guid: b2a668d6e1960204780960bc2a309488, type: 3}
+  _componentSprite: {fileID: 21300000, guid: ae73f531b8c1b1c46af7d92cd00d1866, type: 3}
+  _componentType: 2
+  _lastWordSprite: {fileID: 21300000, guid: afde294756538e142bba0a0aee9b92fb, type: 3}
+  _skillHintSprite: {fileID: 21300000, guid: ced7fcae485a2224497aa6688ea9ff31, type: 3}
