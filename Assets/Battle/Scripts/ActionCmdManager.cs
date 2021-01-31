@@ -20,6 +20,8 @@ public class ActionCmdManager : MonoBehaviour
     Dictionary<int, Skill> skillDictionary = new Dictionary<int, Skill>();
     public List<Sprite> skillSprites = new List<Sprite>();
     public List<Image> skillIconImages = new List<Image>();
+    public List<GameObject> effectList = new List<GameObject>();
+    int[] skillNumbers;
     private void OnGUI()
     {
         if (currentText == "")
@@ -98,6 +100,7 @@ public class ActionCmdManager : MonoBehaviour
         coolDownTime.Add(skills[1].GetCoolDown());
         skillIconImages[0].sprite = skillSprites[0];
 
+
         skills.Add(skillDictionary[1]);
         coolDownTime.Add(skills[2].GetCoolDown());
         skillIconImages[1].sprite = skillSprites[1];
@@ -117,6 +120,13 @@ public class ActionCmdManager : MonoBehaviour
         skillIconImages[4].sprite = skillSprites[Mathf.Max(Investigate.GardenEelComponent.Instance.componentIDs[2], 0)];
 
 
+        skillNumbers = new int[]{
+            0,
+            1,
+            Mathf.Max(Investigate.GardenEelComponent.Instance.componentIDs[0], 1),
+            Mathf.Max(Investigate.GardenEelComponent.Instance.componentIDs[1], 1),
+            Mathf.Max(Investigate.GardenEelComponent.Instance.componentIDs[2], 1)
+        };
 
     }
     void Update()
@@ -186,12 +196,21 @@ public class ActionCmdManager : MonoBehaviour
     public void DoSkill()
     {
         skills[skillIndex].DoSkill(player, shark);
-
+        StartCoroutine(ShowEffect(skillIndex));
         whiteText = "";
         redText = "";
         currentText = "";
         UpdateText();
         coolDownTime[skillIndex] = 0;
+
+    }
+
+    IEnumerator ShowEffect(int index)
+    {
+        index -= 1;
+        effectList[skillNumbers[index]].SetActive(true);
+        yield return new WaitForSeconds(1);
+        effectList[skillNumbers[index]].SetActive(false);
     }
 
 }

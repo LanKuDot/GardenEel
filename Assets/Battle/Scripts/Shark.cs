@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Shark : MonoBehaviour, ICharacter
 {
-    [SerializeField] float timeBeforeAction = 13f;
+    [SerializeField] float timeBeforeAction = 5f;
     float timer;
     public CharacterUIController characterUI;
     public float hp = 100;
@@ -18,6 +18,7 @@ public class Shark : MonoBehaviour, ICharacter
     float speed;
     int speedCount = 0;
     int blindCount = 0;
+    public GameObject attackImage;
     class DOT
     {
         public float damage;
@@ -87,6 +88,13 @@ public class Shark : MonoBehaviour, ICharacter
             return;
         }
         skills[skillIndex].DoSkill(this, player);
+        StartCoroutine(ShowAttackImage());
+    }
+    IEnumerator ShowAttackImage()
+    {
+        attackImage.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        attackImage.SetActive(false);
     }
 
     private void TakeDamageOverTime()

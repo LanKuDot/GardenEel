@@ -7,7 +7,7 @@ public class Flick : Skill
     string cmd = "sharrrrrrrrrrrk";
     public override void DoSkill(ICharacter self, ICharacter target)
     {
-        target.TakeDamage(6);
+        target.TakeDamage(12);
     }
 
     public override string GetSkillCommand()
