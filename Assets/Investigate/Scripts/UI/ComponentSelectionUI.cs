@@ -15,6 +15,8 @@ namespace Investigate.UI
         private Image _lastWordImage = null;
         [SerializeField]
         private Image _skillHintImage = null;
+        [SerializeField]
+        private Animator _skillHintAnimator = null;
 
         #endregion
 
@@ -41,6 +43,9 @@ namespace Investigate.UI
 
             _checkUI.SetActive(false);
             GameplayManager.Instance.GameResume();
+
+            _skillHintAnimator.gameObject.SetActive(true);
+            _skillHintAnimator.Play("SkillHint", -1, 0);
         }
 
         public void CancelComponent()

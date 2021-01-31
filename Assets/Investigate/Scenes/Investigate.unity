@@ -266,7 +266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &110715149
 RectTransform:
   m_ObjectHideFlags: 0
@@ -542,6 +542,7 @@ MonoBehaviour:
   _checkUI: {fileID: 110715148}
   _lastWordImage: {fileID: 1925254867}
   _skillHintImage: {fileID: 204942269}
+  _skillHintAnimator: {fileID: 204942271}
 --- !u!1 &204942267
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,13 +554,14 @@ GameObject:
   - component: {fileID: 204942268}
   - component: {fileID: 204942270}
   - component: {fileID: 204942269}
+  - component: {fileID: 204942271}
   m_Layer: 5
   m_Name: SkillHintImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &204942268
 RectTransform:
   m_ObjectHideFlags: 0
@@ -616,6 +618,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204942267}
   m_CullTransparentMesh: 0
+--- !u!95 &204942271
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204942267}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cfb027ca86ff27c4f82f01c36c56958d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &240183299
 GameObject:
   m_ObjectHideFlags: 0
